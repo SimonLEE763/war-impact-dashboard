@@ -153,7 +153,15 @@ export const loadData = async (): Promise<DashboardData> => {
     if (typeof val === 'number') {
         return format(XLSX.SSF.parse_date_code(val), 'yyyy-MM-dd');
     }
-    return String(val);
+    let strVal = String(val).trim();
+    const dotMatch = strVal.match(/^(\d{4})\.\s*(\d{1,2})\.\s*(\d{1,2})\.?$/);
+    if (dotMatch) {
+      const y = dotMatch[1];
+      const m = dotMatch[2].padStart(2, '0');
+      const d = dotMatch[3].padStart(2, '0');
+      return `${y}-${m}-${d}`;
+    }
+    return strVal;
   };
 
   dieselData.filter(d => d['입고량(L)'] && d['입고단가']).forEach((row, i) => {
