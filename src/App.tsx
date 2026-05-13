@@ -227,7 +227,7 @@ export default function App() {
           >
             {formatMoneyKrSplit(currentKPI.ytd).num}<span className="text-lg text-slate-400 font-medium ml-1">{formatMoneyKrSplit(currentKPI.ytd).unit}</span>
           </motion.h2>
-          <p className="text-xs text-slate-500 font-medium bg-red-50 text-red-600 px-2 py-1 rounded w-fit">1월~4월 발생 비용 (최우선 관리 대상)</p>
+          <p className="text-xs text-slate-500 font-medium bg-red-50 text-red-600 px-2 py-1 rounded w-fit">1월~4월 발생 비용</p>
         </Card>
         <Card className="relative overflow-hidden group">
           <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
